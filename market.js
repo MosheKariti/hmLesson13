@@ -14,8 +14,6 @@ function addItem(item,listId) {
     if (orderedItems.includes(item)) {
         orderedItems.push(item);
         document.getElementById(listId).innerHTML = 'X' + singleItemCountByItem(item) + ' ' + item.name;
-        addMinusButton(item,listId);
-        addPlusButton(item,listId);
     } else {
         orderedItems.push(item);
         let newItem = document.createElement('li');
@@ -24,9 +22,9 @@ function addItem(item,listId) {
         let newParagraph = document.getElementById('items');
         newItem.appendChild(text);
         newParagraph.appendChild(newItem);
-        addMinusButton(item,listId);
-        addPlusButton(item,listId);
     }
+    addMinusButton(item,listId);
+    addPlusButton(item,listId);
     calculateTotalPrice();
     allItemsCount();
 }
