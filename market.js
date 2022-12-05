@@ -62,8 +62,9 @@ function addPlusButton(item, listId) {
     addItemBtn.className = "btn btn-primary btn-sm addAndRemoveButtons";
     addItemBtn.style.marginLeft = '1px';
     addItemBtn.id = item.id.toString() + 'add';
-    createAddItemEventListener(item.id,item,listId);
+    createAddItemEventListener(item,listId);
 }
+
 function createRemoveItemEventListener(item,listId) {
     let id = item.id.toString() + 'remove';
     let removeShampoo = document.getElementById(id);
@@ -71,8 +72,9 @@ function createRemoveItemEventListener(item,listId) {
         removeItemUnit(item,listId);
     });
 }
-function createAddItemEventListener (itemId, item, listId) {
-    let id = itemId.toString() + 'add';
+
+function createAddItemEventListener (item, listId) {
+    let id = item.id.toString() + 'add';
     let addShampoo = document.getElementById(id);
     addShampoo.addEventListener('click',()=>{
         addItem(item,listId);
